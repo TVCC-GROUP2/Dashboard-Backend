@@ -1,0 +1,19 @@
+{
+  "name": "analysis-backend",
+  "version": "1.0.0",
+  "description": "Backend analysis for group 2. Built in nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TVCC-GROUP2/Backend.git"
+  },
+  "author": "group 2",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TVCC-GROUP2/Backend/issues"
+  },
+  "homepage": "https://github.com/TVCC-GROUP2/Backend#readme"
+}
