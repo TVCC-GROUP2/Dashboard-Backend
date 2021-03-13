@@ -6,6 +6,7 @@ var con = mysql.createConnection({
   host: sql.uri,
   user: sql.user,
   password: sql.password,
+  database: sql.name,
   insecureAuth : true
 });
 
