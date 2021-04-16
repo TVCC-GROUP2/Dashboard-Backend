@@ -5,6 +5,7 @@ const { sql } = require('./config');
 var con = mysql.createConnection({
   host: sql.uri,
   user: sql.user,
+  port: '3306',
   password: sql.password,
   database: sql.name,
   insecureAuth : true
