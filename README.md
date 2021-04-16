@@ -27,9 +27,13 @@ To Set up your environment correctly
 - change the keys in the .env to match your system configuration
 
   -- NODE_ENV=development
+
   -- SQL_URI=localhost
+
   -- SQL_PASSWORD=your_mysql_password
+
   -- SQL_USERNAME=root
+
   -- SQL_DATABASENAME=keele
 
 To Run the Application
