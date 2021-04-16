@@ -25,6 +25,7 @@ To Set up mysql for your application go through the following steps after instal
 To Set up your environment correctly
 
 - change the keys in the .env to match your system configuration
+
   -- NODE_ENV=development
   -- SQL_URI=localhost
   -- SQL_PASSWORD=your_mysql_password
@@ -38,6 +39,8 @@ To Run the Application
 
 To See a list of avaliable apis follow --> https://documenter.getpostman.com/view/14938451/Tz5wVZF6
 
+To visit the existing repo --> https://github.com/TVCC-GROUP2/Dashboard-Backend.git
+
 ## Stuck?
 
 If you get stuck, send us an email (x4z22@students.keele.ac.uk)
@@ -45,5 +48,5 @@ If you get stuck, send us an email (x4z22@students.keele.ac.uk)
 ## Helpful resources
 
 [For fixing Mysql path error](https://www.youtube.com/watch?v=-rzQv9DLfDo)
+
 [A nice to have IDE](https://code.visualstudio.com/download)
-[Existing Repo](https://github.com/TVCC-GROUP2/Dashboard-Backend.git)
