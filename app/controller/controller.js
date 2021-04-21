@@ -4,8 +4,14 @@ const GetLoginCount = async (req, res) => {
     try {
       var from = req.query.from; 
       var to = req.query.to; 
+      var query = req.query.query
 
-      sql=`select count(*) as count, month(last_user_login) as month, year(last_user_login) as year from attendees where last_user_login between '`+ from + `' AND '` + to + `' group by month(last_user_login), year(last_user_login)`
+      if (query == "day") {
+        sql=`select count(*) as count, last_user_login as date from attendees where last_user_login between '`+ from + `' AND '` + to + `' group by last_user_login`
+
+      }else{
+        sql=`select count(*) as count, month(last_user_login) as month, year(last_user_login) as year from attendees where last_user_login between '`+ from + `' AND '` + to + `' group by month(last_user_login), year(last_user_login)`
+      }
 
       db.query(sql, function (err, result) {
         if (err) throw err;
@@ -25,8 +31,14 @@ const GetLoginCount = async (req, res) => {
     try {
       var from = req.query.from; 
       var to = req.query.to; 
+      var query = req.query.query
 
-      sql=`select count(attendeeid) as count, month(date_pinged) as month, year(date_pinged) as year from attendee_session_tracking where date_pinged between '`+ from + `' AND '` + to + `' group by month(date_pinged), year(date_pinged)`
+      if (query == "day") {
+        sql=`select count(date_pinged) as count, date_pinged as date from attendee_session_tracking where date_pinged between '`+ from + `' AND '` + to + `' group by date_pinged`
+
+      }else{
+        sql=`select count(date_pinged) as count, month(date_pinged) as month, year(date_pinged) as year from attendee_session_tracking where date_pinged between '`+ from + `' AND '` + to + `' group by month(date_pinged), year(date_pinged)`
+      }
 
       db.query(sql, function (err, result) {
         if (err) throw err;
@@ -141,7 +153,14 @@ const GetLoginCount = async (req, res) => {
       var from = req.query.from; 
       var to = req.query.to; 
 
-      sql=`select count(sa.attendeeid) as count, month(sa.date_visited) as month, year(sa.date_visited) as year, e.name from stand_attendance sa left join events e on sa.eventid=e.id where sa.date_visited between '`+ from + `' AND '` + to + `' group by month(sa.date_visited), year(sa.date_visited), e.name`
+      var query = req.query.query
+
+      if (query == "day") {
+        sql=`select count(*) as count, date_visited as date, e.name from stand_attendance sa left join events e on sa.eventid=e.id where sa.date_visited between '`+ from + `' AND '` + to + `' group by date_visited, e.name`
+
+      }else{
+        sql=`select count(*) as count, month(sa.date_visited) as month, year(sa.date_visited) as year, e.name from stand_attendance sa left join events e on sa.eventid=e.id where sa.date_visited between '`+ from + `' AND '` + to + `' group by month(sa.date_visited), year(sa.date_visited), e.name`
+      }
 
       db.query(sql, function (err, result) {
         if (err) throw err;
